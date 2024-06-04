@@ -33,7 +33,7 @@ function calculateScore(word) {
 
 function fetchApiData() {
     fetch('https://testapi.sail-dev.com/api/data/getworddata').then(response => response.json()).then(data => {
-        let displayWords = '<h3>Previous Words:</h3><table><tr><th>Word</th><th>Score</th><th>Date</th></tr>';
+        let displayWords = '<h3>Previous Words:</h3><table class="table table-bordered"><thead class="thead-light"><tr><th>Word</th><th>Score</th><th>Date</th></tr></thead><tbody>';
         data.forEach(item => {
             let date = new Date(item.scoreDate);
             let formattedDate = date.toLocaleDateString();
