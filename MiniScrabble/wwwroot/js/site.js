@@ -33,13 +33,13 @@ function calculateScore(word) {
 
 function fetchApiData() {
     fetch('https://testapi.sail-dev.com/api/data/getworddata').then(response => response.json()).then(data => {
-        let displayWords = '<h3> Previous Words: </h3><ul>';
+        let displayWords = '<h3>Previous Words:</h3><table><tr><th>Word</th><th>Score</th><th>Date</th></tr>';
         data.forEach(item => {
             let date = new Date(item.scoreDate);
             let formattedDate = date.toLocaleDateString();
-            displayWords += `<li>${item.word} = ${item.score} (${formattedDate})</li>`;
+            displayWords += `<tr><td>${item.word}</td><td>${item.score}</td><td>${formattedDate}</td></tr>`;
         });
-        displayWords += '</ul>';
+        displayWords += '</table>';
         document.getElementById('displayApiData').innerHTML = displayWords;
     });
 }
