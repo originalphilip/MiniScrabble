@@ -7,6 +7,10 @@
 document.getElementById('wordForm').addEventListener('submit', function (event){
     event.preventDefault();
     let word = document.getElementById('word').value;
+    if (!/^[a-zA-Z]*$/g.test(word)) {
+        alert('Please enter a valid word (only letters).');
+        return;
+    }
     let score = calculateScore(word);
     fetch('/Home/GetSpecialWords').then(response => response.json()).then(data => {
         console.log('Special Words:', data);
