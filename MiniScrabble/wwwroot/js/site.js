@@ -3,6 +3,11 @@
 
 // Write your JavaScript code.
 
+//load api data on home page
+document.addEventListener('DOMContentLoaded', function () {
+    fetchApiData();
+});
+
 //handles form when submitted
 document.getElementById('wordForm').addEventListener('submit', function (event){
     event.preventDefault();
