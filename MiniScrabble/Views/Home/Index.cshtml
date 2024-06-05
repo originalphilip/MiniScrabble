@@ -1,10 +1,13 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<form id="wordForm">
-    <label for="word">Enter a word: </label>
-    <input type="text" id="word" name="word" pattern="[A-Za-z]+" required />
-    <button type = "submit">Submit</button>
+<div class="container mt-5">
+<form id="wordForm" class="form-inline">
+    <div class="form-group mb-2">
+        <input type="text" class="form-control" id="word" name="word" pattern="[A-Za-z]+" required placeholder="Enter a word">
+    </div>
+    <button type="submit" class="btn btn-primary mb-2 ml-2">Submit</button>
 </form>
-<div id = "displayScore"></div>
-<div id="displayApiData"></div>
+</div>
+<div id="displayScore" class="mt-4"></div>
+<div id="displayApiData" class="mt-4"></div>
